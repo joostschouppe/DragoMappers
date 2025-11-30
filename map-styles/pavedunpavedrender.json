@@ -13,7 +13,7 @@
     },
 	"customtiles": {
       "type": "vector",
-      "url": "http://127.0.0.1:3000/bolivia-custom"
+      "url": "pmtiles://joostschouppe.github.io/DragoMappers/vector-data/bolivia-custom.pmtiles"
     },
     "natural_earth_shaded_relief": {
       "maxzoom": 6,
