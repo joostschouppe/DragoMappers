@@ -10,6 +10,11 @@
 
 <!-- PMTiles JS -->
 <script src="https://unpkg.com/pmtiles@3/dist/index.js"></script>
+<script>
+    const protocol = new PMTiles.Protocol();
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+</script>
+
 
 <style>
   body, html { margin: 0; height: 100%; }
