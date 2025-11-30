@@ -20,12 +20,31 @@
 let protocol = new pmtiles.Protocol();
 maplibregl.addProtocol("pmtiles", protocol.tile);
 
+// Parse hash or use defaults
+function getMapPosition() {
+  const hash = window.location.hash.slice(1); // Remove #
+  if (hash) {
+    const parts = hash.split('/');
+    if (parts.length === 3) {
+      return {
+        zoom: parseFloat(parts[0]),
+        center: [parseFloat(parts[2]), parseFloat(parts[1])]
+      };
+    }
+  }
+  // Default position
+  return { zoom: 7, center: [-17.361, -63.336] };
+}
+
+const position = getMapPosition();
+
 // Create viewer
 const map = new maplibregl.Map({
     container: 'map',
     style: './map-styles/pavedunpavedrender.json',  
-    center: [-17.35, -63.33],
-    zoom: 7
+    center: position.center,
+    zoom: position.zoom,
+    hash: true
 });
 
 // Optional: add navigation controls
