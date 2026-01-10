@@ -11,9 +11,14 @@
       "type": "vector",
       "url": "https://tiles.openfreemap.org/planet"
     },
-	"customtiles": {
+    "customtiles": {
       "type": "vector",
-      "url": "pmtiles://vector-data/bolivia-custom.pmtiles"
+      "tiles": [
+        "https://dragomappers.abrdns.com/bolivia-custom/{z}/{x}/{y}"
+      ],
+      "minzoom": 0,
+      "maxzoom": 14,
+      "scheme": "xyz"
     },
     "natural_earth_shaded_relief": {
       "maxzoom": 6,
